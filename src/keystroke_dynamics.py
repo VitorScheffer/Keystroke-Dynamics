@@ -36,8 +36,8 @@ def get_dados():
     scaler = StandardScaler()
     scaler.fit(X_train)
 
-    scaler.transform(X_train)
-    scaler.transform(X_test)
+    X_train = scaler.transform(X_train)
+    X_test = scaler.transform(X_test)
 
     return X, y, X_train, X_test, y_train, y_test, y_labels
 
@@ -123,7 +123,8 @@ def plt_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix',
         print('Confusion matrix, without normalization')
 
     print(cm)"""
-
+    
+    plt.figure(figsize=(6*3.13,4*3.13)) 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
