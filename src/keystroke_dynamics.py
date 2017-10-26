@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-
-
 from sklearn.model_selection import learning_curve
 from sklearn.model_selection import ShuffleSplit
 
@@ -109,9 +107,7 @@ def plt_learn_curve(estimator, title, X, y, ylim=None, cv=None,
     plt.legend(loc="best")
     return plt
 
-from matplotlib import pyplot as plt
-
-def plt_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix',cmap=plt.cm.Blues):
+def plt_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix',cmap=plt.cm.Oranges):
     """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
@@ -142,3 +138,4 @@ def plt_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix',
     plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+    return plt
